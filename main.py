@@ -1,6 +1,6 @@
 def parseCSV(fileName):
   """
-  – A dictionary where each key is the first field of a record, and the value corresponding to that key is the second field of that record. If the file does not have the right format, the function returns an empty dictionary.
+  – Returns a dictionary where each key is the first field of a record, and the value corresponding to that key is the second field of that record. If the file does not have the right format, the function returns an empty dictionary.
   """
   if fileName.find('.csv') == -1:
     return {}
@@ -61,7 +61,7 @@ topDict = parseCSV("top-1m.csv")
 # Main Program
 while True:
 
-  # Forces user to enter a valid Top Level Domain
+  # Forces the user to enter a valid top-level domain
   tld = input("Enter the top-level domain: ").lower()
   while not checkTLD(tld, tldDict):
     tld = input("Not a valid TLD. Try again: ").lower()
@@ -78,6 +78,7 @@ while True:
   while repeatAgain != "y" and repeatAgain != "n":
     repeatAgain = input("Do you want to enter another TLD? y/n: ").lower()
   if repeatAgain == "n":
+    print("Program exited.")
     break
 
 
